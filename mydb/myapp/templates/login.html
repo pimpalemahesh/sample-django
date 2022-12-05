@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{%block title %} login {%endblock title %}
+
+{% block body%}
+<form action="login" method="post" class="form active" id="login">
+  {% csrf_token %}
+  <h2>Login</h2>
+  <label for="email">Email Address</label>
+  <div class="pass-reset" onclick="activeInput(this)">
+    <input type="text" name="name" class="email" id="emailInput" placeholder="Username">
+  </div>
+  <label for="password">Password</label>
+  <div class="pass-reset" onclick="activeInput(this)">
+    <input type="password" class="password" name="password" id="password" placeholder="**********">
+  </div>
+  <button type="submit" class="btn btn-login">Login</button>
+  <p>Don't have an account?<a href="signup" id="changeToRegister">Sign up</a></p>
+</form>
+{% endblock body%}

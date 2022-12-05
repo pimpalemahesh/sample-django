@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{%block title %} signup {%endblock title %}
+
+{% block body%}
+<h1>hello</h1>
+
+<form action="signup" method="post">
+    {% csrf_token %}
+
+    <h2>Register</h2>
+    <label for="name">Email Address</label>
+    <div class="pass-reset" onclick="activeInput(this)">
+        <input type="name" name="name" class="email" id="name" placeholder="Username">
+    </div>
+    <label for="email">Email Address</label>
+    <div class="pass-reset" onclick="activeInput(this)">
+        <input type="email" name="email" class="email" id="emailInput" placeholder="name@mail.com">
+    </div>
+    <label for="password">Password</label>
+    <div class="pass-reset" onclick="activeInput(this)">
+        <input type="password" class="password" name="password" id="password" placeholder="**********">
+    </div>
+    <button class="btn btn-login">Register</button>
+    <p>Do you have an account? <a href="login" id="chnageToLogin">Sign in</a></p>
+    <p class="or">or</p>
+</form>
+{% endblock body%}
